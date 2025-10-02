@@ -1,0 +1,10 @@
+{
+    "name": "news-aggregator-ai-backend",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Backend para um agregador de notícias de Direita com IA",
+    "dependencies": {
+        "openai": "^4.0.0",
+        "rss-parser": "^3.13.0"
+    }
+}
