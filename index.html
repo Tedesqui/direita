@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Notícias - A Direita pelo Mundo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            background-color: #f4f4f9; 
-        }
-        h1, h2, h3, h4 { 
-            font-family: 'Roboto Slab', serif; 
-        }
+        body { font-family: 'Roboto', sans-serif; background-color: #f4f4f9; }
+        h1, h2, h3, h4 { font-family: 'Roboto Slab', serif; }
         .news-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             border: 1px solid #e2e8f0;
@@ -25,10 +20,10 @@
     </style>
 </head>
 <body>
-    <header class="bg-gray-800 text-white shadow-lg">
+    <header class="bg-gray-900 text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
-            <h1 class="text-3xl font-bold">A Direita pelo Mundo</h1>
-            <p class="text-sm text-gray-300 mt-1">As principais notícias, reescritas e analisadas por IA.</p>
+            <h1 class="text-4xl font-extrabold tracking-tight">A Direita pelo Mundo</h1>
+            <p class="text-sm text-gray-300 mt-1">Notícias e análises com uma perspectiva clara e contundente.</p>
         </div>
     </header>
 
@@ -39,7 +34,7 @@
         </div>
         </main>
 
-    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+    <footer class="bg-gray-900 text-white text-center py-4 mt-8">
         <p class="text-sm">&copy; 2025 - Todos os direitos reservados.</p>
     </footer>
 
@@ -63,26 +58,25 @@
                 }
 
                 articles.forEach(article => {
-                    // Transforma a lista de pontos-chave em itens de HTML <li>
                     const keyPointsHTML = article.aiContent.pontos_chave.map(point => `
-                        <li class="mb-1">${point}</li>
+                        <li class="mb-2">${point}</li>
                     `).join('');
 
                     const card = `
-                        <article class="news-card bg-white rounded-lg shadow-sm overflow-hidden mb-8">
-                            <div class="p-6">
-                                <h2 class="text-2xl font-bold text-gray-900 mb-3">${article.aiContent.novo_titulo}</h2>
+                        <article class="news-card bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                            <div class="p-6 md:p-8">
+                                <h2 class="text-3xl font-extrabold text-gray-900 mb-4">${article.aiContent.novo_titulo}</h2>
                                 
-                                <p class="text-gray-700 mb-4">${article.aiContent.paragrafo_principal}</p>
+                                <p class="text-lg text-gray-800 leading-relaxed mb-5">${article.aiContent.paragrafo_principal}</p>
 
-                                <div class="bg-gray-50 border-l-4 border-blue-600 p-4 rounded-r-lg mb-4">
-                                    <h4 class="font-bold text-gray-800 mb-2">Análise</h4>
-                                    <p class="text-sm text-gray-600 italic">"${article.aiContent.analise}"</p>
+                                <div class="bg-gray-100 border-l-4 border-red-700 p-5 rounded-r-lg mb-5">
+                                    <h4 class="font-bold text-xl text-gray-900 mb-2">Análise Contundente</h4>
+                                    <p class="text-base text-gray-700 italic">"${article.aiContent.analise}"</p>
                                 </div>
                                 
-                                <div class="mb-4">
-                                    <h4 class="font-bold text-gray-800 mb-2">Pontos-Chave</h4>
-                                    <ul class="list-disc list-inside text-sm text-gray-700">
+                                <div class="mb-5">
+                                    <h4 class="font-bold text-xl text-gray-900 mb-2">Pontos-Chave</h4>
+                                    <ul class="list-disc list-inside text-base text-gray-700">
                                         ${keyPointsHTML}
                                     </ul>
                                 </div>
